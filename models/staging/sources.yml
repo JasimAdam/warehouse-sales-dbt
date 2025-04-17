@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: project_dbt
+    tables:
+      - name: inventory
+        description: "Inventory table pulled from external CSV. Tracks current stock per warehouse."
+        external:
+          location: "data/inventory.csv"
+          format: csv
+        columns:
+          - name: warehouse_id
+            description: "ID of the warehouse storing the product"
+            tests:
+              - not_null
+          - name: product_id
+            description: "ID of the product"
+            tests:
+              - not_null
+              - unique
+          - name: quantity_on_hand
+            description: "How many units are currently in stock"
+          - name: last_updated
+            description: "The date the inventory count was last updated"
+

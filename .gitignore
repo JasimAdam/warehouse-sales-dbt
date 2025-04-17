@@ -1,0 +1,10 @@
+# DBT build artifacts
+target/
+dbt_packages/
+logs/
+
+# DuckDB database files
+data/*.duckdb
+
+# System files
+.DS_Store
