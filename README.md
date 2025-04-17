@@ -15,3 +15,27 @@ This project demonstrates how to build a lightweight, modular data pipeline usin
 
 ## 📂 Project Structure
 
+
+---
+
+## 🔄 Data Flow Overview
+
+1. **Raw CSVs** (inventory, products, sales) loaded into DuckDB as external sources.
+2. **Staging Models** clean and standardize the data using dbt.
+3. **Sales Summary Model** aggregates revenue and inventory data by product and warehouse.
+4. **Python Script** creates a revenue chart using the summary.
+
+---
+
+## 📊 Top 10 Products by Revenue
+
+![Top 10 Products](charts/top10.png)
+
+---
+
+## ▶️ How to Run
+
+1. **Install Dependencies**
+   ```bash
+   pip install dbt-duckdb pandas matplotlib duckdb
+
